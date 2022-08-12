@@ -123,18 +123,16 @@ def get_dataloader(
     return coco_loader
 
 
-if __name__ == '__main__':
+def main():
     import argparse
     parser = argparse.ArgumentParser(description='Measure explanation stability using zoom/pan')
     parser.add_argument('--images_dir', type=str,
-                        default='/media/lassi/Data/datasets/coco/images/val2017/',
                         help='path to coco root directory containing image folders')
     parser.add_argument('--ann_path', type=str,
-                        default='/media/lassi/Data/datasets/coco/annotations/instances_val2017.json',
                         help='path to root directory containing annotations')
-    parser.add_argument('--batch_size', type=int, default=100,
+    parser.add_argument('--batch_size', type=int, default=32,
                         help='batch size for cam methods')
-    parser.add_argument('--num_workers', type=int, default=16,
+    parser.add_argument('--num_workers', type=int, default=8,
                         help='workers for dataloader')
     parser.add_argument('--model_name', type=str, default='resnet50',
                         help='name of model used for inference',
@@ -196,7 +194,7 @@ if __name__ == '__main__':
         num_workers=args.num_workers
     )
 
-    results = measure_stability(
+    corrs = measure_stability(
         coco_loader=coco_loader,
         device=device,
         model=model,
@@ -204,6 +202,8 @@ if __name__ == '__main__':
         is_backprop=is_backprop
     )
 
-    #  Save image to annotation dictionary as json
-    with open(f'data/{args.model_name}-{args.method}-transformation_stability.json', 'w') as fp:
-        json.dump(results, fp)
+    #  Print results
+    print(f'Mean correlation: {np.nanmean(corrs)}')
+
+if __name__ == '__main__':
+    main()

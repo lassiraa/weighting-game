@@ -157,7 +157,7 @@ def main():
         corrs.append(corr)
     
     #  Print mean correlation
-    print(np.nanmean(corrs))
+    print(f'Mean correlation: {np.nanmean(corrs)}')
 
 
 if __name__ == '__main__':

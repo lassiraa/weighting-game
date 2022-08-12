@@ -115,14 +115,12 @@ def fine_tune(model: nn.Module,
     return model
 
 
-if __name__ == '__main__':
+def main():
     import argparse
     parser = argparse.ArgumentParser(description='Finetune network')
     parser.add_argument('--images_dir', type=str,
-                        default='/media/lassi/Data/datasets/coco/images/',
                         help='path to coco root directory containing image folders')
     parser.add_argument('--ann_dir', type=str,
-                        default='/media/lassi/Data/datasets/coco/annotations/',
                         help='path to root directory containing annotations')
     parser.add_argument('--lr', type=float, default=1e-3, help='learning rate')
     parser.add_argument('--gamma', type=float, default=0.90,
@@ -137,7 +135,6 @@ if __name__ == '__main__':
                         help='name of model used for training',
                         choices=['vit_b_32', 'vgg16_bn', 'resnet50', 'swin_t'])
     parser.add_argument('--checkpoint_dir', type=str,
-                        default='/media/lassi/Data/checkpoints/model.pt',
                         help='path to save checkpoint')
     args = parser.parse_args()
 
@@ -216,3 +213,7 @@ if __name__ == '__main__':
         device=device,
         checkpoint_dir=args.checkpoint_dir
     )
+
+
+if __name__ == '__main__':
+    main()

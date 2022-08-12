@@ -6,6 +6,8 @@ ann_path="CHANGE"  # e.g. ./coco/annotations/instances_val2017.json
 method="gradcam" # options: gradcam, gradcam++, xgradcam, ablationcam, layercam, guidedbackprop
 model="resnet50" # options: resnet50, swin_t, vit_b_32, vgg16_bn
 
+batch_size=32
+
 
 python weighting_game.py \
     --method ${method} \

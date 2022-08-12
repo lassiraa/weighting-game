@@ -1,12 +1,10 @@
 from typing import Any, Callable, Optional, Tuple, List
 import os
-import json
 
 import numpy as np
 import torch
 import torchvision.models as models
 import torch.nn as nn
-import cv2
 from pycocotools.coco import COCO
 from torchvision.datasets import VisionDataset
 from PIL import Image
