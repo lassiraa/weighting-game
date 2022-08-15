@@ -37,5 +37,11 @@ Or with conda using:
 ## Cite this work
 If you use this code for your project please consider citing us:
 ```
-TODO
+@article{raatikainen2022weighting,
+  author = {Raatikainen, Lassi and Rahtu, Esa},
+  title = {The Weighting Game: Evaluating Quality of Explainability Methods},
+  publisher = {arXiv},
+  year = {2022},
+  url = {https://arxiv.org/abs/2208.06175}
+}
 ```
