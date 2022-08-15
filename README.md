@@ -1,6 +1,6 @@
 # The Weighting Game: Evaluating Quality of Explainability Methods
 
-Standalone code for the paper: [The Weighting Game: Evaluating Quality of Explainability Methods](github.com/lassiraa/weighting-game) by Lassi Raatikainen and Esa Rahtu.
+Standalone code for the paper: [The Weighting Game: Evaluating Quality of Explainability Methods](https://arxiv.org/abs/2208.06175) by Lassi Raatikainen and Esa Rahtu.
 
 
 ## Abstract
